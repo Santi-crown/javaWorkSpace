@@ -20,20 +20,10 @@ public class FrameTest {
         // for this platform, and then invoke its getScreenSize()
         // method to obtain a second Dimension object.
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();        
 
-        // Compute the center point of the screen as (centerX, centerY).
-        int centerX = screenSize.width/2;
-        int centerY = screenSize.height/2;
-
-        // We want half of the frame to be to the left of center,
-        // and half to be above center.
-        int halfWidth = frameSize.width/2;
-        int halfHeight = frameSize.height/2;
-        theFrame.setLocation(centerX - halfWidth, centerY - halfHeight);
-
+        // this is the shortest path, we just do the calculates within the setLocation
+        theFrame.setLocation((screenSize.width/2 - frameSize.width/2), (screenSize.height/2 - frameSize.height/2));
         theFrame.setVisible(true);
-
-
     }
 }
