@@ -1,7 +1,7 @@
-
 // in this class, we are gonna implement a annonymous inner class that implements the Action listener interface. It's a pretty interesting kind of class. Cuz it doesn't have a header, just a body. 
 import java.awt.*;
-import javax.swing.*;
+import java.awt.event.*;
+import javax.swing.*; // added for event handling
 
 public class Calculator3 extends JFrame {
 
@@ -56,7 +56,39 @@ public class Calculator3 extends JFrame {
         minusButton = new JButton("-");
         buttonPanel.add(plusButton);
         buttonPanel.add(minusButton);
-        contentPane.add(buttonPanel, BorderLayout.EAST);
+        contentPane.add(buttonPanel, BorderLayout.EAST);    
+
+        // Add behaviors! Note the use of anonymous inner classes.
+        // First, we create a listener object to respond to
+        // the "plus" button ...
+        ActionListener l = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                double d1 = Double.parseDouble(input1TextField.getText());
+                double d2 = Double.parseDouble(input2TextField.getText());
+    
+                 // Add the two values and display the answer on the GUI.
+                 answerLabel.setText("" + (d1 + d2));                 
+            }
+        };
+
+        // ... and then we register this listener with the appropriate
+        // component.
+        plusButton.addActionListener(l);
+
+         // We do the same for the minus button.
+        l = new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                double d1 = Double.parseDouble(input1TextField.getText());
+                double d2 = Double.parseDouble(input2TextField.getText());
+            // Subtract the two values and display the answer on the GUI.    
+            answerLabel.setText("" + (d1 - d2));
+            }
+        };
+        // Register this listener with the appropriate
+        // component.
+        minusButton.addActionListener(l);
+
+        // We set the frame to be visible AFTER registering the listeners
         this.setVisible(true);
     }
 
