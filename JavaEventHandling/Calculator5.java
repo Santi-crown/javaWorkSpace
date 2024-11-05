@@ -1,4 +1,5 @@
 // in this class, we are gonna implement a annonymous inner class that implements the Action listener interface. It's a pretty interesting kind of class. Cuz it doesn't have a header, just a body. 
+//  new WindowListener() class anonymous implements WindowListener { ... } ;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*; // added for event handling
