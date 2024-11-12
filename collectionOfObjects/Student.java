@@ -1,16 +1,24 @@
-public class Student{
-    private String id;
+
+public class Student {
+
+    private String idNo;
     private String name;
 
-    public Student (String name){
-        this.name = name;
+    // Constructor.
+    public Student(String i, String n) {
+        idNo = i;
+        name = n;
     }
-    public Student(String id, String name){
-        this.id = id;
+
+    public Student(String name){
         this.name = name;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
+    }
+
+    public String getIdNo() {
+        return idNo;
     }
 }
