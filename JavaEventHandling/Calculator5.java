@@ -1,5 +1,17 @@
 // in this class, we are gonna implement a annonymous inner class that implements the Action listener interface. It's a pretty interesting kind of class. Cuz it doesn't have a header, just a body. 
 //  new WindowListener() class anonymous implements WindowListener { ... } ;
+
+// but now, we are gonna implement adapter classes
+
+/*
+ * 
+ * How does this help us out? Rather than having to implement the WindowListener interface
+ via our anonymous inner class, we can instead extend the WindowAdapter class, overriding the
+ onemethod we care about and inheriting the stubbed out versions of all the rest. In terms of our
+ anonymous inner class syntax, we’d therefore replace the rather cumbersome version of code
+ here:
+ * 
+ */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*; // added for event handling
